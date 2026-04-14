@@ -1,0 +1,33 @@
+{
+  "name": "vue-calculator",
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-calculator.umd.js",
+  "module": "./dist/vue-calculator.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-calculator.es.js",
+      "require": "./dist/vue-calculator.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "ant-design-vue": "^4.2.6",
+    "vue": "^3.5.32"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.5",
+    "ant-design-vue": "^4.2.6",
+    "vite": "^8.0.4",
+    "vue": "^3.5.32",
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
