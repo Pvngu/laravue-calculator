@@ -1,5 +1,6 @@
 import PosCalculator from './components/PosCalculator.vue'
 import { useCalculatorEngine } from './composables/useCalculatorEngine'
+import './style.css'
 
 export { PosCalculator, useCalculatorEngine }
 

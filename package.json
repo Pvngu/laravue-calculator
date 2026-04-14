@@ -1,6 +1,6 @@
 {
   "name": "vue-calculator",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "files": [
     "dist"
@@ -11,7 +11,8 @@
     ".": {
       "import": "./dist/vue-calculator.es.js",
       "require": "./dist/vue-calculator.umd.js"
-    }
+    },
+    "./style.css": "./dist/style.css"
   },
   "scripts": {
     "dev": "vite",
