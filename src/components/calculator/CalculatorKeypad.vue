@@ -1,6 +1,4 @@
 <script setup>
-import { Button as AButton } from 'ant-design-vue'
-
 defineProps({
   items: {
     type: Array,
@@ -11,33 +9,35 @@ defineProps({
 const emit = defineEmits(['press'])
 
 function buttonClass(item) {
+  const base = 'flex h-14 items-center justify-center rounded-xl text-xl font-extrabold transition-all active:scale-95 shadow-sm hover:shadow-md'
+
   if (item.type === 'operator') {
-    return 'h-14 !rounded-xl !border-0 !bg-amber-600 !text-white !text-xl !font-extrabold'
+    return `${base} bg-amber-600 text-white hover:bg-amber-500`
   }
 
   if (item.type === 'equals') {
-    return 'h-14 !rounded-xl !border-0 !bg-teal-700 !text-white !text-xl !font-extrabold'
+    return `${base} bg-teal-700 text-white hover:bg-teal-600`
   }
 
   if (item.type === 'action') {
-    return 'h-14 !rounded-xl !bg-slate-100 !text-slate-900 !text-xl !font-extrabold'
+    return `${base} bg-slate-100 text-slate-900 hover:bg-slate-200`
   }
 
-  return 'h-14 !rounded-xl !bg-white !text-slate-900 !text-xl !font-extrabold'
+  return `${base} bg-white text-slate-900 hover:bg-slate-50 border border-slate-100`
 }
 </script>
 
 <template>
   <div class="grid grid-cols-4 gap-2" role="group" aria-label="Calculator keypad">
-    <AButton
+    <button
       v-for="item in items"
       :key="item.key"
       :class="buttonClass(item)"
       @click="emit('press', item)"
     >
-        <span class="-translate-y-0.5">
-            {{ item.label }}
-        </span>
-    </AButton>
+      <span class="-translate-y-0.5">
+        {{ item.label }}
+      </span>
+    </button>
   </div>
 </template>

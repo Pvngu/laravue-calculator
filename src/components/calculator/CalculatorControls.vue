@@ -1,6 +1,4 @@
 <script setup>
-import { Button as AButton } from 'ant-design-vue'
-
 defineProps({
   copied: {
     type: Boolean,
@@ -17,14 +15,24 @@ const emit = defineEmits(['copy', 'undo', 'clear'])
 
 <template>
   <div class="grid grid-cols-3 gap-2">
-    <AButton class="h-11 !rounded-lg !font-semibold" @click="emit('copy')">
+    <button
+      class="flex h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 font-semibold text-slate-700 transition-all hover:bg-slate-50 hover:shadow-sm active:scale-95 disabled:opacity-50"
+      @click="emit('copy')"
+    >
       {{ copied ? 'Copied' : 'Copy' }}
-    </AButton>
-    <AButton class="h-11 !rounded-lg !font-semibold" :disabled="!canUndo" @click="emit('undo')">
+    </button>
+    <button
+      class="flex h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 font-semibold text-slate-700 transition-all hover:bg-slate-50 hover:shadow-sm active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+      :disabled="!canUndo"
+      @click="emit('undo')"
+    >
       Undo
-    </AButton>
-    <AButton danger class="h-11 !rounded-lg !font-semibold" @click="emit('clear')">
+    </button>
+    <button
+      class="flex h-11 items-center justify-center rounded-lg bg-red-50 px-4 font-semibold text-red-600 transition-all hover:bg-red-100 hover:text-red-700 active:scale-95"
+      @click="emit('clear')"
+    >
       Clear
-    </AButton>
+    </button>
   </div>
 </template>

@@ -1,6 +1,5 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { Card as ACard } from 'ant-design-vue'
 import CalculatorDisplay from './calculator/CalculatorDisplay.vue'
 import CalculatorControls from './calculator/CalculatorControls.vue'
 import CalculatorKeypad from './calculator/CalculatorKeypad.vue'
@@ -290,17 +289,16 @@ onBeforeUnmount(() => {
 <template>
   <section
     ref="rootRef"
-    class="w-full"
+    class="w-full outline-none"
     tabindex="0"
     :aria-label="title"
   >
-    <ACard
-      class="w-full border-slate-200 bg-linear-to-br from-amber-50 via-sky-50 to-slate-100 shadow-lg"
-      :body-style="{ padding: '12px' }"
+    <div
+      class="overflow-hidden rounded-2xl border border-slate-200 bg-linear-to-br from-amber-50 via-sky-50 to-slate-100 p-3 shadow-xl ring-1 ring-slate-900/5 backdrop-blur-sm"
     >
       <div
         class="grid gap-3"
-        :class="compact ? 'grid-cols-1 max-w-105' : 'grid-cols-1 lg:grid-cols-[minmax(0,1fr)_220px]'"
+        :class="compact ? 'grid-cols-1 max-w-md mx-auto' : 'grid-cols-1 lg:grid-cols-[minmax(0,1fr)_220px]'"
       >
         <div class="grid gap-3">
           <CalculatorDisplay :expression="expression" :display="display" />
@@ -322,6 +320,6 @@ onBeforeUnmount(() => {
           @select="applyHistory"
         />
       </div>
-    </ACard>
+    </div>
   </section>
 </template>

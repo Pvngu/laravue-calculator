@@ -18,13 +18,12 @@ export default defineConfig({
       fileName: (format) => `vue-calculator.${format}.js`
     },
     rollupOptions: {
-      // Externalize BOTH vue and ant-design-vue
-      external: ['vue', 'ant-design-vue'],
+      // Externalize vue
+      external: ['vue'],
       output: {
         exports: 'named',
         globals: {
-          vue: 'Vue',
-          'ant-design-vue': 'antd'
+          vue: 'Vue'
         }
       }
     }
