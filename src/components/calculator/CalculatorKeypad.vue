@@ -9,33 +9,33 @@ defineProps({
 const emit = defineEmits(['press'])
 
 function buttonClass(item) {
-  const base = 'flex h-14 items-center justify-center rounded-xl text-xl font-extrabold transition-all active:scale-95 shadow-sm hover:shadow-md'
+  const base = 'vcal:flex vcal:h-14 vcal:items-center vcal:justify-center vcal:rounded-xl vcal:text-xl vcal:font-extrabold vcal:transition-all vcal:active:scale-95 vcal:shadow-sm vcal:hover:shadow-md'
 
   if (item.type === 'operator') {
-    return `${base} bg-amber-600 text-white hover:bg-amber-500`
+    return `${base} vcal:bg-amber-600 vcal:text-white vcal:hover:bg-amber-500`
   }
 
   if (item.type === 'equals') {
-    return `${base} bg-teal-700 text-white hover:bg-teal-600`
+    return `${base} vcal:bg-teal-700 vcal:text-white vcal:hover:bg-teal-600`
   }
 
   if (item.type === 'action') {
-    return `${base} bg-slate-100 text-slate-900 hover:bg-slate-200`
+    return `${base} vcal:bg-slate-100 vcal:text-slate-900 vcal:hover:bg-slate-200`
   }
 
-  return `${base} bg-white text-slate-900 hover:bg-slate-50 border border-slate-100`
+  return `${base} vcal:bg-white vcal:text-slate-900 vcal:hover:bg-slate-50 vcal:border vcal:border-slate-100`
 }
 </script>
 
 <template>
-  <div class="grid grid-cols-4 gap-2" role="group" aria-label="Calculator keypad">
+  <div class="vcal:grid vcal:grid-cols-4 vcal:gap-2" role="group" aria-label="Calculator keypad">
     <button
       v-for="item in items"
       :key="item.key"
       :class="buttonClass(item)"
       @click="emit('press', item)"
     >
-      <span class="-translate-y-0.5">
+      <span class="vcal:-translate-y-0.5">
         {{ item.label }}
       </span>
     </button>

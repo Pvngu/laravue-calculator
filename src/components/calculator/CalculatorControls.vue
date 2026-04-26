@@ -14,22 +14,22 @@ const emit = defineEmits(['copy', 'undo', 'clear'])
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-2">
+  <div class="vcal:grid vcal:grid-cols-3 vcal:gap-2">
     <button
-      class="flex h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 font-semibold text-slate-700 transition-all hover:bg-slate-50 hover:shadow-sm active:scale-95 disabled:opacity-50"
+      class="vcal:flex vcal:h-11 vcal:items-center vcal:justify-center vcal:rounded-lg vcal:border vcal:border-slate-200 vcal:bg-white vcal:px-4 vcal:font-semibold vcal:text-slate-700 vcal:transition-all vcal:hover:bg-slate-50 vcal:hover:shadow-sm vcal:active:scale-95 vcal:disabled:opacity-50"
       @click="emit('copy')"
     >
       {{ copied ? 'Copied' : 'Copy' }}
     </button>
     <button
-      class="flex h-11 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 font-semibold text-slate-700 transition-all hover:bg-slate-50 hover:shadow-sm active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+      class="vcal:flex vcal:h-11 vcal:items-center vcal:justify-center vcal:rounded-lg vcal:border vcal:border-slate-200 vcal:bg-white vcal:px-4 vcal:font-semibold vcal:text-slate-700 vcal:transition-all vcal:hover:bg-slate-50 vcal:hover:shadow-sm vcal:active:scale-95 vcal:disabled:cursor-not-allowed vcal:disabled:opacity-50"
       :disabled="!canUndo"
       @click="emit('undo')"
     >
       Undo
     </button>
     <button
-      class="flex h-11 items-center justify-center rounded-lg bg-red-50 px-4 font-semibold text-red-600 transition-all hover:bg-red-100 hover:text-red-700 active:scale-95"
+      class="vcal:flex vcal:h-11 vcal:items-center vcal:justify-center vcal:rounded-lg vcal:bg-red-50 vcal:px-4 vcal:font-semibold vcal:text-red-600 vcal:transition-all vcal:hover:bg-red-100 vcal:hover:text-red-700 vcal:active:scale-95"
       @click="emit('clear')"
     >
       Clear

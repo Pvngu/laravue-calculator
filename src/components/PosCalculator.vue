@@ -289,18 +289,18 @@ onBeforeUnmount(() => {
 <template>
   <section
     ref="rootRef"
-    class="w-full outline-none"
+    class="vcal:w-full vcal:outline-none"
     tabindex="0"
     :aria-label="title"
   >
     <div
-      class="overflow-hidden rounded-2xl border border-slate-200 bg-linear-to-br from-amber-50 via-sky-50 to-slate-100 p-3 shadow-xl ring-1 ring-slate-900/5 backdrop-blur-sm"
+      class="vcal:overflow-hidden vcal:rounded-2xl vcal:border vcal:border-slate-200 vcal:bg-linear-to-br vcal:from-amber-50 vcal:via-sky-50 vcal:to-slate-100 vcal:p-3 vcal:shadow-xl vcal:ring-1 vcal:ring-slate-900/5 vcal:backdrop-blur-sm"
     >
       <div
-        class="grid gap-3"
-        :class="compact ? 'grid-cols-1 max-w-md mx-auto' : 'grid-cols-1 lg:grid-cols-[minmax(0,1fr)_220px]'"
+        class="vcal:grid vcal:gap-3"
+        :class="compact ? 'vcal:grid-cols-1 vcal:max-w-md vcal:mx-auto' : 'vcal:grid-cols-1 vcal:lg:grid-cols-[minmax(0,1fr)_220px]'"
       >
-        <div class="grid gap-3">
+        <div class="vcal:grid vcal:gap-3">
           <CalculatorDisplay :expression="expression" :display="display" />
 
           <CalculatorControls

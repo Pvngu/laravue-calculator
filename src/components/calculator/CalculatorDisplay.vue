@@ -12,12 +12,12 @@ defineProps({
 </script>
 
 <template>
-  <header class="rounded-xl border border-slate-200 bg-white/90 px-4 py-3 shadow-sm">
-    <p class="min-h-4 text-xs font-medium uppercase tracking-wide text-slate-500" aria-live="polite">
+  <header class="vcal:rounded-xl vcal:border vcal:border-slate-200 vcal:bg-white/90 vcal:px-4 vcal:py-3 vcal:shadow-sm">
+    <p class="vcal:min-h-4 vcal:text-xs vcal:font-medium vcal:uppercase vcal:tracking-wide vcal:text-slate-500" aria-live="polite">
       {{ expression || 'Ready' }}
     </p>
     <p
-      class="mt-1 text-right font-mono text-3xl font-black leading-none tracking-wide text-slate-900 sm:text-4xl"
+      class="vcal:mt-1 vcal:text-right vcal:font-mono vcal:text-3xl vcal:font-black vcal:leading-none vcal:tracking-wide vcal:text-slate-900 vcal:sm:text-4xl"
       aria-live="assertive"
     >
       {{ display }}
